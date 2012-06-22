@@ -1,0 +1,23 @@
+task :default do
+require 'premailer'
+
+    premailer = Premailer.new('email_source.html', :warn_level => Premailer::Warnings::SAFE, :remove_comments => true)
+    
+    #make output directory
+    Dir::mkdir("output") unless File.exists?("output") 
+    
+    # Write the HTML output
+    fout = File.open("output/output.html", "w")
+    fout.puts premailer.to_inline_css
+    fout.close
+
+    # Write the plain-text output
+    fout = File.open("output/ouput.txt", "w")
+    fout.puts premailer.to_plain_text
+    fout.close
+
+    # Output any CSS warnings
+    premailer.warnings.each do |w|
+      puts "#{w[:message]} (#{w[:level]}) may not render properly in #{w[:clients]}"
+    end
+end
