@@ -14,8 +14,11 @@ How to use
 
 Clone.
 Make changes to email_source.html. Have a look at the comments in the file for instructions on how to use. 
+
 Run Rake
+
 Check your output folder.
+
 Test your output, maybe using Litmus. Litmus takes ages to do anything so make sure you have something else to do. 
 
 
