@@ -1,0 +1,15 @@
+GEM
+  specs:
+    css_parser (1.1.9)
+    htmlentities (4.3.0)
+    nokogiri (1.4.4)
+    premailer (1.7.3)
+      css_parser (>= 1.1.9)
+      htmlentities (>= 4.0.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  nokogiri
+  premailer
